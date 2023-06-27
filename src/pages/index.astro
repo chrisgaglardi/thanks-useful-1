@@ -13,14 +13,28 @@ import Layout from '../components/Layout.astro';
         <h2 style="color: #FF1493; font-size: 2em;">
           Join us for a day full of fun, games, and cake as we celebrate Luna turning 8!
         </h2>
-        <div class="bttns">
-          <a href="https://example.com/path-to-rsvp" style="background-color: #FF69B4; color: white; padding: 10px 20px; text-decoration: none;">RSVP Here</a>
-        </div>
       </div>
 			<div class="party-details" style="color: #FF1493; font-size: 1.5em;">
         <p>Date: [Party Date]</p>
         <p>Time: [Party Time]</p>
         <p>Location: [Party Location]</p>
+      </div>
+      <div class="rsvp-form">
+        <form name="rsvp" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="rsvp" />
+          <p>
+            <label>Your Name: <input type="text" name="name" required /></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email" required /></label>
+          </p>
+          <p>
+            <label>Will you attend? <select name="attendance" required><option value="">Choose...</option><option value="yes">Yes</option><option value="no">No</option></select></label>
+          </p>
+          <p>
+            <button type="submit" style="background-color: #FF69B4; color: white; padding: 10px 20px; text-decoration: none;">Submit RSVP</button>
+          </p>
+        </form>
       </div>
     </div>
 	</main>
